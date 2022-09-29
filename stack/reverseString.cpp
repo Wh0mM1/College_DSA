@@ -24,8 +24,7 @@ void pop()
     }
     else
     {
-        cout<<
-        str[top];
+        cout<<str[top];
         top--;
     }
 }

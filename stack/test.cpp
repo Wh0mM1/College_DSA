@@ -1,10 +1,29 @@
 #include <iostream>
 using namespace std;
-string str="Nihal";
+
 int main()
 {
-    for(int i=0;i<str.size();i++)
+    int t;
+    while(t--)
     {
-        cout<<str[i];
+        int a,b;
+        cin>>a>>b;
+        if(a==1 || b==1)
+        {
+            cout<<"No"<<endl;
+        }
+        else if (a%2==0 && b%2==0)
+        {
+            cout<<"Yes"<<endl;
+        }
+        else if((a%2!=0 && b%2!=0))
+        {
+            cout<<"No"<<endl;
+        }
+        else
+        {
+            cout<<"Yes"<<endl;
+        }
     }
+    return 0;
 }
