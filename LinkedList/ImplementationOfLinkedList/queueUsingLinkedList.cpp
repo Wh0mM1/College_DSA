@@ -49,7 +49,7 @@ void deleteEnd()
         }
         rear=temp1;
         rear->next=NULL;
-        free(temp);
+         free(temp);
     }
 }
 
