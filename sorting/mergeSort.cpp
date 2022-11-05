@@ -61,7 +61,7 @@ void mergeSort(int arr[],int l,int r)
 
 int main()
 {
-    int arr[]={5,4,3,2,1};
+    int arr[]={4,1,3,9,7};
     mergeSort(arr,0,4);
     for(int i=0;i<5;i++)
     {
