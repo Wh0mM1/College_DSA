@@ -1,72 +1,145 @@
-#include <iostream>  
+#include <iostream>
 using namespace std;
 
-void merge(int arr[],int l,int mid,int r)
+void merge(int arr[], int l, int mid, int r)
 {
-    int n1=mid-l+1;
-    int n2=r-mid;
-    
+    int n1 = mid - l + 1;
+    int n2 = r - mid;
+
     int a[n1];
     int b[n2];
 
-    for(int i=0;i<n1;i++)
-    {  
-        a[i]=arr[l+i];
-    }
-    for(int i=0;i<n2;i++)
+    for (int i = 0; i < n1; i++)
     {
-        b[i]=arr[mid+1+i];
+        a[i] = arr[l + i];
+    }
+    for (int i = 0; i < n2; i++)
+    {
+        b[i] = arr[mid + 1 + i];
     }
 
-    int i=0;
-    int j=0;
-    int k=l;
-    while(i<n1 && j<n2)
+    int i = 0;
+    int j = 0;
+    int k = l;
+    while (i < n1 && j < n2)
     {
-        if(a[i]<b[j])
+        if (a[i] < b[j])
         {
-            arr[k]=a[i];
-            k++; i++;
+            arr[k] = a[i];
+            k++;
+            i++;
         }
         else
         {
-            arr[k]=b[j];
-            k++; j++;
+            arr[k] = b[j];
+            k++;
+            j++;
         }
     }
-    while(i<n1)
+    while (i < n1)
     {
-        arr[k]=a[i];
-            k++; i++;
+        arr[k] = a[i];
+        k++;
+        i++;
     }
-    while(j<n2)
+    while (j < n2)
     {
-        arr[k]=b[j];
-            k++; j++;
+        arr[k] = b[j];
+        k++;
+        j++;
     }
 }
 
-
-void mergeSort(int arr[],int l,int r)
+void mergeSort(int arr[], int l, int r)
 {
-    if(l<r)
+    if (l < r)
     {
-        int mid=(l+r)/2;
-        mergeSort(arr,l,mid);
-        mergeSort(arr,mid+1,r);
-        
-        merge(arr,l,mid,r);
+        int mid = (l + r) / 2;
+        mergeSort(arr, l, mid);
+        mergeSort(arr, mid + 1, r);
+
+        merge(arr, l, mid, r);
     }
 }
 
 int main()
 {
-    int arr[]={4,1,3,9,7};
-    mergeSort(arr,0,4);
-    for(int i=0;i<5;i++)
+    int arr[] = {4, 1, 3, 9, 7};
+    mergeSort(arr, 0, 4);
+    for (int i = 0; i < 5; i++)
     {
-        cout<<arr[i]<<" ";
+        cout << arr[i] << " ";
     }
-    cout<<endl;
+    cout << endl;
     return 0;
 }
+
+// #include <bits\stdc++.h>
+// using namespace std;
+
+// int merge(int arr[], int l, int mid, int r)
+// {
+//     int n1 = mid - l + 1;
+//     int n2 = r - mid;
+//     int a[n1], b[n2];
+//     for (int i = 0; i < n1; i++)
+//     {
+//         a[i] = arr[l + i];
+//     }
+//     for (int i = 0; i < n2; i++)
+//     {
+//         b[i] = arr[mid + i + 1];
+//     }
+//     int i = 0;
+//     int j = 0;
+//     int k = l;
+//     while (i < n1 && j < n2)
+//     {
+//         if (a[i] > b[j])
+//         {
+//             arr[k] = b[j];
+//             j++;
+//             k++;
+//         }
+//         else
+//         {
+//             arr[k] = a[i];
+//             i++;
+//             k++;
+//         }
+//     }
+
+//     while (i < n2)
+//     {
+//         arr[k] = a[i];
+//         i++;
+//         k++;
+//     }
+//     while (j < n2)
+//     {
+//         arr[k] = b[j];
+//         j++;
+//         k++;
+//     }
+// }
+
+// void mergeSort(int arr[], int l, int r)
+// {
+//     if (l < r)
+//     {
+//         int mid = (l + r) / 2;
+//         mergeSort(arr, l, mid);
+//         mergeSort(arr, mid + 1, r);
+//         merge(arr, l, mid, r);
+//     }
+// }
+
+// int main()
+// {
+//     int arr[] = {2, 3, 1, 5, 4};
+//     mergeSort(arr, 0, 4);
+//     for (int i = 0; i < 5; i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+// }
