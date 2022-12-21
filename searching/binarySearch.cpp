@@ -5,7 +5,7 @@ int binarySearch(int arr[], int n, int k)
 {
     int l = 0;
     int r = n - 1;
-    while (l < r)
+    while (l <= r)
     {
         int mid = (l + r) / 2;
         if (arr[mid] == k)
@@ -27,5 +27,13 @@ int binarySearch(int arr[], int n, int k)
 int main()
 {
     int arr[] = {1, 2, 3, 4, 5, 6};
-    cout << binarySearch(arr, 6, 4) << endl;
+    int a = binarySearch(arr, 6, 4);
+    if (a == -1)
+    {
+        cout << "Element is not in given array." << endl;
+    }
+    else
+    {
+        cout << "Position of element " << 4 << " in array is: " << a << endl;
+    }
 }

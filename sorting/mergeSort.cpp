@@ -65,7 +65,14 @@ void mergeSort(int arr[], int l, int r)
 int main()
 {
     int arr[] = {4, 1, 3, 9, 7};
+    cout << "Input Array: ";
+    for (int i = 0; i < 5; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
     mergeSort(arr, 0, 4);
+    cout << "Sorted Array: ";
     for (int i = 0; i < 5; i++)
     {
         cout << arr[i] << " ";
